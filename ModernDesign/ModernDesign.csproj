@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -69,12 +71,33 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MVM\View\DiscoveryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVM\View\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Theme\MenuButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\TextBoxTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVM\ViewModel\DiscoveryViewModel.cs" />
+    <Compile Include="MVM\ViewModel\HomeViewModel.cs" />
+    <Compile Include="MVM\ViewModel\MainViewModel.cs" />
+    <Compile Include="MVM\View\DiscoveryView.xaml.cs">
+      <DependentUpon>DiscoveryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVM\View\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -102,10 +125,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Fonts\" />
-    <Folder Include="Images\" />
     <Folder Include="MVM\Model\" />
-    <Folder Include="MVM\ViewModel\" />
-    <Folder Include="MVM\View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Corpo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
